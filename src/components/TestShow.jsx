@@ -9,15 +9,15 @@ import Card from "./card/Card";
 // import Card from "../components/card";
 
 const TestShow = () => {
-    const [posts, setPosts] = useState({});
+    // const [posts, setPosts] = useState({});
 
-    const fetchPosts = async () => {
-      setPosts(await PostService.getPosts());
-    };
+    // const fetchPosts = async () => {
+    //   setPosts(await PostService.getPosts());
+    // };
 
-    useEffect(() => {
-      fetchPosts();
-    }, [posts]);
+    // useEffect(() => {
+    //   fetchPosts();
+    // }, [posts]);
 
     //delete post
 
@@ -52,19 +52,19 @@ const TestShow = () => {
         </div>
       </div>
     <Card/>
-      <h1>Posts</h1>
+      {/* <h1>Posts</h1>
       {posts.data !== undefined && posts.data.data.length > 0 && (
         <table style={{ width: "100%" }} border="1">
           <thead>
             <th>Title</th>
-            <th>Date</th>
+            <th>desc</th>
             <th>Image</th>
       </thead>
           <tbody>
             {posts.data.data.map((posts) => (
               <tr>
                 <td>{posts.title}</td>
-                <td>{posts.date}</td>
+                <td>{posts.desc}</td>
                 <td>
                   <img
                     src={"http://localhost:8000/api/postImages/" + posts.image}
@@ -76,7 +76,7 @@ const TestShow = () => {
             ))}
           </tbody>
         </table>
-      )} 
+      )}  */}
     </div>
   );
 };

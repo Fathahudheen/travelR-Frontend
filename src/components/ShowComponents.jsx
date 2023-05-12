@@ -36,7 +36,8 @@ const ShowComponents = () => {
                 <table style={{width:'100%'}} border='1'>
                     <thead>
                         <th>Title</th>
-                        <th>Date</th>
+                        <th>Description</th>
+                        {/* <th>Date</th> */}
                         <th>Image</th> 
                         <th>Actions</th> 
                     </thead>
@@ -45,7 +46,8 @@ const ShowComponents = () => {
                             posts.data.data.map(posts=>(
                                 <tr>
                                     <td>{posts.title}</td>
-                                    <td>{posts.date}</td>
+                                    <td>{posts.desc}</td>
+                                    {/* <td>{posts.date}</td> */}
                                     <td>
                                         <img src={'http://localhost:8000/api/postImages/'+posts.image} style={{width:'100px',height:'100px'}} alt="" />
                                     </td>

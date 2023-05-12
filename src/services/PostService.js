@@ -1,7 +1,7 @@
 import axios from 'axios'
 
 class Post{
-     //get Posts
+     
     create(formdata){
         const url ="http://localhost:8000/api/createpost";
         const config ={
