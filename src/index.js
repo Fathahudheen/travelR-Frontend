@@ -9,14 +9,16 @@ import TestShow from "./components/TestShow";
 
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
+import Navbar from "./components/navbar/Navbar";
 
 export default function Index() {
   return (
     <BrowserRouter basename="/">
-      <Routes>
-        <Route path="/" element={<App />} />
+      <Navbar/>
+      <Routes>  
+        <Route path="/" element={<TestShow />} />
         <Route path="/show" element={<ShowComponents />} />
-        <Route path="/testshow" element={<TestShow />} />
+        <Route path="/testshow" element={<App />} />  
       </Routes>
     </BrowserRouter>
   );

@@ -33,7 +33,7 @@ const TestShow = () => {
 
   return (
     <div>
-      <Navbar />
+      {/* <Navbar /> */}
 
       <div className="backgroundimage  position-relative">
         <div className="container-fluid">

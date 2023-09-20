@@ -14,13 +14,15 @@ const UpdatModel = (props) => {
   const [date, setDate] = useState(props.date);
   const [id, setId] = useState(props.id);
   const [selectedFile, setSelectedFile] = useState("");
+  const [desc, setDesc] = useState("");
+
 
   const handlesubmit = async (event) => {
     event.preventDefault();
     const formData = new FormData();
     formData.append("id", id);
     formData.append("title", title);
-    formData.append("date", date);
+    formData.append("desc", desc);
     if (selectedFile !== "" && selectedFile.length !== 0) {
       formData.append("image", selectedFile);
     }
@@ -55,13 +57,12 @@ const UpdatModel = (props) => {
             />
             <br></br>
             <input
-              type="date"
-              name="date"
-              value={date}
-              onChange={(event) => setDate(event.target.value)}
+              type="text"
+              name="desc"
+              placeholder="Enter Post Description"
+              onChange={(event) => setDesc(event.target.value)}
               required
             />
-            <br></br>
             <input
               type="file"
               name="file"

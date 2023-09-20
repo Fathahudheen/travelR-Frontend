@@ -12,30 +12,28 @@ const CreateComponent = () => {
     event.preventDefault();
 
     const formdata = new FormData();
-    formdata.append('title',title);
-    formdata.append('desc',desc);
-    formdata.append('date',date);
-    formdata.append('image',image);
+    formdata.append("title", title);
+    formdata.append("desc", desc);
+    formdata.append("date", date);
+    formdata.append("image", image);
 
-     const response =  await PostService.create(formdata);
-     console.log(response);
+    const response = await PostService.create(formdata);
+    console.log(response);
 
-    if(response.data.success === true){
-        setMessage('Post created Successfully')
+    if (response.data.success === true) {
+      setMessage("Post created Successfully");
+    } else {
+      setMessage("Post failed!");
     }
-    else{
-        setMessage('Post failed!')
-    }
-    setTimeout(()=>{
-        setMessage('')
-    },2000)
-     event.target.reset();
-
+    setTimeout(() => {
+      setMessage("");
+    }, 2000);
+    event.target.reset();
   };
 
   return (
     <div>
-        <h1>Create Post</h1>
+      <h1>Create Post</h1>
       <form action="" onSubmit={handleSubmit}>
         <input
           type="text"
@@ -61,18 +59,16 @@ const CreateComponent = () => {
           onChange={(event) => setDate(event.target.value)}
           required
         /><br></br> */}
-                <input
+        <input
           type="file"
           name="image"
           onChange={(event) => setImage(event.target.files[0])}
-          required
+          // required
         />
         <br></br>
         <button>Submit</button>
-       
-
       </form>
-       <p>{message}</p>
+      <p>{message}</p>
     </div>
   );
 };
